@@ -1,48 +1,20 @@
-# Wekan
+<h1>Holler</h1>
 
-[![Join the chat][gitter_badge]][gitter_chat]
+**Holler** is a fork of **Wekan** (Think Trello) with **Spark** and **Tropo** additions.
 
-Wekan is an open-source and collaborative kanban board application.
+<h4>The concept is simple:</h4>
+<h4>Every Board is a Room | Every List is a Status | Every Card is a Task | Every Label is an Action</h4>
+<h5>The roadmap is self-hosted on PNSLABS.com:</h5>
+[![The roadmap is self-hosted on PNSLABS.com][screenshot]][roadmap]
 
-Whether you’re maintaining a personal todo list, planning your holidays with
-some friends, or working in a team on your next revolutionary idea, Kanban
-boards are an unbeatable tool to keep your things organized. They give you a
-visual overview of the current state of your project, and make you productive by
-allowing you to focus on the few items that matter the most.
+<h2>Holler Spark integration</h2> 
+<h5>Spark Bot is currently capable of listing tasks and displaying / updating notes.</h5>
+![The roadmap is self-hosted on PNSLABS.com][botscreenshot]
 
-[![Our roadmap is self-hosted on Wekan][screenshot]][roadmap]
-
-Wekan supports most features you would expect of it including a real-time user
-interface, cards comments, member assignations, customizable labels, filtered
-views, and more.
-
-Since it is a free software, you don’t have to trust us with your data and can
-install Wekan on your own computer or server. In fact we encourage you to do
-that by providing one-click installation on Heroku or [Sandstorm]
-[sandstorm_market] platforms and verified [Docker][docker_image] images. You can
-also install Wekan on the following Platforms:
-
-[![Deploy][heroku_button]][heroku_deploy]
-[![SignUp][indiehosters_button]][indiehosters_saas]
-[![Deploy to Scalingo][scalingo_button]][scalingo_deploy]
-[![Install on Cloudron][cloudron_button]][cloudron_install]
 
 Wekan is released under the very permissive [MIT license](LICENSE), and made
 with [Meteor](https://www.meteor.com).
 
-[Our roadmap is self-hosted on Wekan][roadmap]
-
-[screenshot]: http://i.imgur.com/cI4jW2h.png
-[gitter_badge]: https://badges.gitter.im/Join%20Chat.svg
-[gitter_chat]: https://gitter.im/wekan/wekan
-[roadmap]: http://try.wekan.io/b/MeSsFJaSqeuo9M6bs/wekan-roadmap
-[sandstorm_market]: https://oasis.sandstorm.io/appdemo/m86q05rdvj14yvn78ghaxynqz7u2svw6rnttptxx49g1785cdv1h
-[docker_image]: https://hub.docker.com/r/mquandalle/wekan/
-[heroku_button]: https://www.herokucdn.com/deploy/button.png
-[heroku_deploy]: https://heroku.com/deploy?template=https://github.com/wekan/wekan/tree/master
-[indiehosters_button]: https://indie.host/signup.png
-[indiehosters_saas]: https://indiehosters.net/shop/product/wekan-20
-[scalingo_button]: https://cdn.scalingo.com/deploy/button.svg
-[scalingo_deploy]: https://my.scalingo.com/deploy?source=https://github.com/wekan/wekan#master
-[cloudron_button]: https://cloudron.io/img/button.svg
-[cloudron_install]: https://cloudron.io/button.html?app=io.wekan.cloudronapp
+[roadmap]: http://kanban.car.pnslabs.com/b/aYyBDooP8GuL8jJxn/roadmap
+[screenshot]: http://cdpneighbors.com/wp-content/uploads/2016/10/holler2.png
+[botscreenshot]: http://cdpneighbors.com/wp-content/uploads/2016/10/kanbanbot-1-e1477491684564.png
