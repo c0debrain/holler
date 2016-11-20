@@ -1,0 +1,35 @@
+{
+  "name": "holler",
+  "version": "0.10.1",
+  "description": "A Trello Clone forked to add Spark integrations",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "test": "npm run --silent lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.presidio.com:jlevensailor/holler.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://gitlab.presidio.com/jlevensailor/issues"
+  },
+  "homepage": "https://cdpneighbors.com/holler",
+  "devDependencies": {
+    "eslint": "^2.0.0"
+  },
+  "dependencies": {
+    "async": "^2.0.1",
+    "bluebird": "^3.4.6",
+    "body-parser": "^1.15.2",
+    "bufferutil": "^1.2.1",
+    "clipboard": "^1.5.15",
+    "express": "^4.14.0",
+    "request": "^2.75.0",
+    "restify": "^4.1.1",
+    "socket2me-client": "^1.2.0",
+    "utf-8-validate": "^1.2.1",
+    "xss": "^0.2.13"
+  }
+}
