@@ -153,7 +153,7 @@ BlazeComponent.extendComponent({
           style: 'growl-bottom-right',
           icon: 'fa-bullhorn'
         });//bert
-
+        var listText="Hey **"+assigned+"** an update is required for task: **"+title+"**";
         var listText2="To stop this message from repeating, please **@holler update** **"+friendlyId+"** `<notes>`";
         Meteor.call(
         'spark.msgRoom',
@@ -162,20 +162,20 @@ BlazeComponent.extendComponent({
            function(err, res) {
              if(err) {
              } else {
+               Meteor.call(
+               'spark.msgRoom',
+               sparkId,
+               listText2,
+                  function(err, res) {
+                    if(err) {
+                    } else {
+                      }
+                   }//function
+                 );//call to msgRoom
                }
             }//function
           );//call to msgRoom
-          var listText="Hey **"+assigned+"** an update is required for task: **"+title+"**";
-          Meteor.call(
-          'spark.msgRoom',
-          sparkId,
-          listText2,
-             function(err, res) {
-               if(err) {
-               } else {
-                 }
-              }//function
-            );//call to msgRoom
+
       },
       'mouseenter .js-card-details'() {
         this.parentComponent().showOverlay.set(true);

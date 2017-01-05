@@ -20,6 +20,11 @@ Users.attachSchema(new SimpleSchema({
   lastmsg: {
     type: [String],
     optional: true,
+    autoValue() { // eslint-disable-line consistent-return
+      if (this.isInsert && !this.isSet) {
+        return [];
+      }
+    },
   },
   'emails.$.address': {
     type: String,
@@ -331,28 +336,6 @@ if (Meteor.isServer) {
 
       //Add new users to current Board's spark room
       Users.update({_id: user._id}, {$push: {lastmsg: "firstmsg"}});
-      Meteor.call(
-	       'spark.addUser',
-	        sparkRoom,
-          username,
-	         function(err, res) {
-             if(err) {
-               console.log(err);
-             } else {
-//               console.log(username);
-	            }
-            }
-          );//call to addUser
-          Meteor.call(
-    	       'spark.getAvatar',
-    	        username,
-    	         function(err, res) {
-                 if(err) {
-                 } else {
-                   console.log(res);
-    	            }
-                }
-              );//call to listPeople
       user.addInvite(boardId);
 
       try {
@@ -372,7 +355,27 @@ if (Meteor.isServer) {
       } catch (e) {
         throw new Meteor.Error('email-fail', e.message);
       }
-
+      Meteor.call(
+         'spark.addUser',
+          sparkRoom,
+          user.emails[0].address,
+           function(err, res) {
+             if(err) {
+               console.log(err);
+             } else {
+              }
+            }
+          );//call to addUser
+          Meteor.call(
+             'spark.getAvatar',
+              user.emails[0].address,
+               function(err, res) {
+                 if(err) {
+                 } else {
+                   console.log(res);
+                  }
+                }
+              );//call to listPeople
       return { username: user.username, email: user.emails[0].address };
     },
   });

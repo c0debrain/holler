@@ -3,7 +3,7 @@
 //*---Created by Jeff Levensailor jeff@levensailor.com
 //Parses all text after @botname and calls actions
 
-var botName="kanban";
+var botName="holler";
 var helpText = "**My Available Commands are:**\n - **@"+botName+" list** : displays a list of all currently assigned tasks\n - **@"+botName+ " add [Task Name]** : adds a task for tracking\n - **@"+botName+" status [Task #]** : displays all notes for a task\n - **@"+botName+" update [Task #]** : updates a note for a task";
 var listText;
 var cardComments;
@@ -12,11 +12,11 @@ Meteor.methods({
   //METHOD TO INPUT TEXT AND PARSE TO ACTION
   'holler.atMe'(toParse, personEmail, roomId) {
     check(toParse, String);
-    check(roomId, String);
     check(personEmail, String);
-
+    check(roomId, String);
     //retrieve boardid from roomId
     boardId = Boards.findOne({sparkId: roomId})._id;
+    console.log("holler.atMe boardId: " +boardId);
 
   //first word [0] is for "help" "list" "update" and other functions forthcoming
   //second word [1] is for the object to act upon
@@ -142,6 +142,7 @@ console.log(taskName);
     var cardStatus;
     var friendly;
     var listText;
+    console.log("holler.list boardId: " +boardId);
     var yourAssigned = "**Hey** <@personEmail:" + personEmail +"> **, You've been assigned the following tasks:**";
     var cards = Cards.find({members: userID, boardId: boardId}).fetch();
     cards.forEach(function (card){
@@ -269,7 +270,7 @@ console.log(taskName);
     var listExist;
     var newNote;
     //list.find if title engineer updates exist, if not continue
-    listExist = Lists.findOne({title: title})
+    listExist = Lists.findOne({title: title, boardId: boardId})
     if (typeof listExist !== 'undefined' ){
       listId = Lists.findOne({title: title})._id;
       console.log("existing list: " +listId);

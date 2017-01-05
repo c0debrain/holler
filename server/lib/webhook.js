@@ -5,7 +5,7 @@
 
 
 //*---change botName to your unique bot instance
-const botName = "kanban@sparkbot.io"
+const botName = "holler@sparkbot.io"
 var bodyParser = require('body-parser');
 var msgid;
 var personEmail;

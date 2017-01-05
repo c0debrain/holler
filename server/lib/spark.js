@@ -2,8 +2,8 @@
 //*---Created by Jeff Levensailor jeff@levensailor.com
 
 //*---Change sparkToken to your unique API key
-const sparkToken = 'MjA2Y2M0MzktODk3Yy00NTI1LWEzOGUtYzk2MWEwNDM5MDQ3ZDI1OTRhMGQtZWY3';
-const botName = "kanban";
+const sparkToken = 'YThkMjQ1MjMtMmFkNy00ZjY2LWI3NDQtNDRkN2IxNDQ5YmRmN2M3ZWE4NDYtNWFi';
+const botName = "holler";
 const sparkAPI = 'https://api.ciscospark.com/v1/';
 const welcomeText1 = "Welcome to the project board, ";
 const welcomeText2 = "I'll be your new personal assistant and organizer friend!<br> For a list of what I can help with, just **@holler help**";
@@ -191,6 +191,7 @@ Meteor.methods({
   },//spark.getMsg
   'spark.getAvatar'(personEmail) {
     check(personEmail, String);
+    console.log("personEmail: " +personEmail);
     var request = require('request');
     var req = {
     auth: { bearer: sparkToken },
@@ -200,6 +201,7 @@ Meteor.methods({
     request.get(req, Meteor.bindEnvironment(function(err, res) {
     if(err) {
     } else {
+      console.log(res.body);
       var sparkAvatar = res.body.items[0].avatar;
       var userId = Users.findOne({emails: {$elemMatch: {address: personEmail}}})._id;
     if (typeof sparkAvatar !== "undefined"){
